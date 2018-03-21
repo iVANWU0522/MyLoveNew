@@ -4,8 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-# Rack Middleware for handling Cross-Origin Resource Sharing (CORS), which make cross-origin AJAX possible
-gem 'rack-cors', :require => 'rack/cors'
+
 # Easy file attachment management for ActiveRecord
 gem 'paperclip', '~> 5.2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
