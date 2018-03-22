@@ -1,1 +1,5 @@
 <h1>MyLove</h1>
+<% @posts.each do |post| %>
+    <%= image_tag post.photos.first.image.url(:medium) %>
+  <%= post.caption %>
+<% end %>
