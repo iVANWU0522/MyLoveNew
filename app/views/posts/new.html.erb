@@ -1,5 +1,0 @@
-<%= simple_form_for @post, :html => { multipart: true } do |f| %>
-  <%= f.input :images, as: :file, input_html: {name: 'images[]', multiple: true} %>
-  <%= f.input :caption, label:false, placeholder: 'Add your caption' %>
-  <%= f.button :submit, class: 'btn-success btn-block' %>
-<% end %>

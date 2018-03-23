@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
-
+  # GET /photos
+  # GET /photos.json
   def index
 
     @post = Post.find(params[:post_id])
@@ -12,7 +13,8 @@ class PhotosController < ApplicationController
     end
   end
 
-
+  # GET /photos/1
+  # GET /photos/1.json
   def show
     @photo = Photo.find(params[:id])
 
@@ -22,6 +24,8 @@ class PhotosController < ApplicationController
     end
   end
 
+  # GET /photos/new
+  # GET /photos/new.json
   def new
     @post = Post.find(params[:post_id])
     @photo = @post.photos.build
@@ -32,10 +36,16 @@ class PhotosController < ApplicationController
     end
   end
 
+  # GET /photos/1/edit
   def edit
+    #@post = Post.find(params[:post_id])
+
     @photo = Photo.find(params[:id])
+    # @photo = Photo.find(params[:id])
   end
 
+  # POST /photos
+  # POST /photos.json
   def create
     @photo = Photo.new(params[:photo])
 
@@ -55,9 +65,12 @@ class PhotosController < ApplicationController
     end
   end
 
+  # PUT /photos/1
+  # PUT /photos/1.json
   def update
 
     @post = Post.find(params[:post_id])
+
     @photo = @post.photos.find(params[:id])
 
     respond_to do |format|
@@ -71,7 +84,11 @@ class PhotosController < ApplicationController
     end
   end
 
+  # DELETE /photos/1
+  # DELETE /photos/1.json
   def destroy
+    #@post = Post.find(params[:post_id])
+    #@photo = @post.photos.find(params[:id])
     @photo = Photo.find(params[:id])
     @photo.destroy
 
