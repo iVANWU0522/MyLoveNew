@@ -4,6 +4,12 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+# A gem to automate using jQuery with Rails
+gem 'jquery-rails'
+# Provides Sprockets implementation for Rails 4.x (and beyond) Asset Pipeline.
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+# Bootstrap 4 ruby gem for Ruby on Rails (Sprockets)
+gem 'bootstrap', '~> 4.0.0'
 # Forms made easy for Rails
 gem 'simple_form'
 # Easy file attachment management for ActiveRecord
