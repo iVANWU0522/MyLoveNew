@@ -12,3 +12,18 @@
  *
  */
 @import "bootstrap";
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: #fafafa;
+  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+/* ## NAVBAR CUSTOMISATIONS ## */
+.navbar {
+  margin-bottom: 0px;
+}
