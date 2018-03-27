@@ -1,0 +1,17 @@
+<div class="posts-wrapper">
+  <div class="post">
+
+    <div class="image center-block">
+      <%= link_to (image_tag post.photos.first.image.url(:medium), class: 'img-responsive'), post_path(post) %>
+    </div>
+
+    <div class="post-bottom">
+      <div class="caption">
+        <div class="caption-content">
+          <%= post.caption %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
