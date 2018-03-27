@@ -48,8 +48,8 @@ class PostsController < ApplicationController
 
         if params[:images]
           # The magic is here ;)
-          params[:images].each { |image|
-            @post.photos.create(image: image)
+          params[:images].each.with_index { |image, index|
+            @post.photos.create(image: image, position: index)
           }
         end
 
@@ -71,8 +71,8 @@ class PostsController < ApplicationController
       if @post.update_attributes(post_params)
         if params[:images]
           # The magic is here ;)
-          params[:images].each { |image|
-            @post.photos.create(image: image)
+          params[:images].each.with_index { |image, index|
+            @post.photos.create(image: image, position: index)
           }
         end
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }

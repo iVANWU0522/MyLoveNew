@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180323025438) do
+ActiveRecord::Schema.define(version: 20180327030249) do
 
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "post_id"
@@ -20,13 +20,13 @@ ActiveRecord::Schema.define(version: 20180323025438) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.integer "position"
   end
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "cover"
   end
 
 end
