@@ -5,7 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 ruby '2.4.1'
-
+# Flexible authentication solution for Rails with Warden
+gem 'devise'
 # A gem to automate using jQuery with Rails
 gem 'jquery-rails'
 # Provides Sprockets implementation for Rails 4.x (and beyond) Asset Pipeline.
