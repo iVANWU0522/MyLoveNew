@@ -1,10 +1,10 @@
-<div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselIndicators-<%= post.id %>" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <% post.photos.each do |photo| %>
       <% if photo.position == 0 %>
-        <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselIndicators-<%= post.id %>" data-slide-to="0" class="active"></li>
       <% else %>
-        <li data-target="#carouselIndicators" data-slide-to="<%= photo.position %>"></li>
+        <li data-target="#carouselIndicators-<%= post.id %>" data-slide-to="<%= photo.position %>"></li>
       <% end %>
     <% end %>
   </ol>
@@ -21,11 +21,11 @@
       <% end %>
     <% end %>
   </div>
-  <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+  <a class="carousel-control-prev" href="#carouselIndicators-<%= post.id %>" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+  <a class="carousel-control-next" href="#carouselIndicators-<%= post.id %>" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>

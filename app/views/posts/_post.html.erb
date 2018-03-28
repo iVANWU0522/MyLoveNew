@@ -1,6 +1,9 @@
 <div class="posts-wrapper">
   <div class="post">
+    <div class="post-head">
 
+      <div class="time-ago"> <%= time_ago_in_words(post.created_at) %></div>
+    </div>
     <div class="image center-block">
       <% if post.photos.count <= 1 %>
         <%= link_to (image_tag post.photos.image.url(:medium), class: 'd-block w-100'), post_path(post) %>
@@ -8,7 +11,6 @@
         <%= render 'photo_carousel', post: post %>
       <% end %>
     </div>
-
     <div class="post-bottom">
       <div class="caption">
         <div class="caption-content">

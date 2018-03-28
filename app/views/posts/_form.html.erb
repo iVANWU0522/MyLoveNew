@@ -1,17 +1,44 @@
-<%= simple_form_for @post, :html => { :class => 'form-horizontal', multipart: true } do |f| %>
-  <div class="control-group">
-    <div class="controls">
-      <!-- The magic is coming ...look at my eyes....shazammmm -->
-      <%= f.input :images, as: :file, input_html: {name: 'images[]', multiple: true} %>
+<div class="posts-wrapper">
+  <div class="post">
+    <div class="post-body">
+      <div class="image-wrap">
+        <%= simple_form_for @post, :html => { multipart: true } do |f| %>
+          <div class="container-fluid">
+            <div class="form-group text-center">
+              <h4>Upload images (this is required)</h4>
+              <!-- The magic is coming ...look at my eyes....shazammmm -->
+              <%= f.input :images, as: :file, input_html: {name: 'images[]', multiple: true} %>
+            </div>
+            <div class="form-group text-center">
+              <%= f.input :caption, label: false, placeholder: 'Add your caption' %>
+            </div>
+            <div class="form-group text-center">
+              <%= f.button :submit, class: 'btn-success btn-block' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div class="control-group">
-    <div class="controls">
-      <%= f.input :caption, label:false, placeholder: 'Add your caption' %>
-    </div>
-  </div>
-  <div class="form-actions">
-    <%= f.button :submit, class: 'btn-success btn-block' %>
-    <%= link_to "Cancel", :back, {:class=>"btn btn-default"} %>
-  </div>
-<% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
