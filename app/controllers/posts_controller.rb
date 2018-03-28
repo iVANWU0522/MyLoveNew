@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  # before action
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   # GET /posts
   # GET /posts.json
   def index
@@ -13,7 +15,6 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.find(params[:id])
     @photos = @post.photos
 
     respond_to do |format|
@@ -41,8 +42,6 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
-
     respond_to do |format|
       if @post.save
 
@@ -53,10 +52,10 @@ class PostsController < ApplicationController
           }
         end
 
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to posts_path, notice: 'Your post has been created!' }
         format.json { render json: @post, status: :created, location: @post }
       else
-        format.html { render action: "new" }
+        format.html { render action: "new", notice: "Your new post couldn't be created! Please check the form." }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
@@ -65,8 +64,6 @@ class PostsController < ApplicationController
   # PUT /posts/1
   # PUT /posts/1.json
   def update
-    @post = Post.find(params[:id])
-
     respond_to do |format|
       if @post.update_attributes(post_params)
         if params[:images]
@@ -75,10 +72,10 @@ class PostsController < ApplicationController
             @post.photos.create(image: image, position: index)
           }
         end
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to posts_path, notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: "edit", notice: "Update failed.  Please check the form." }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
@@ -87,7 +84,6 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
 
     respond_to do |format|
@@ -98,9 +94,11 @@ class PostsController < ApplicationController
 
   private
 
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
   def post_params
-    params.require(:post).permit(:photos,
-                                 :caption
-    )
+    params.require(:post).permit(:photos, :caption)
   end
 end

@@ -1,1 +1,6 @@
 <%=  render 'post', post: @post %>
+<div class="text-center edit-links">
+  <%= link_to "Cancel", posts_path %>
+  |
+  <%= link_to "Edit", edit_post_path %>
+</div>
