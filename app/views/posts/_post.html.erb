@@ -5,7 +5,7 @@
       <% if post.photos.count <= 1 %>
         <%= link_to (image_tag post.photos.image.url(:medium), class: 'd-block w-100'), post_path(post) %>
       <% else %>
-        <%= render 'photo_carousel', locals:{ post: post } %>
+        <%= render 'photo_carousel', post: post %>
       <% end %>
     </div>
 
