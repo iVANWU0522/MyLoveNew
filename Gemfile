@@ -5,7 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 ruby '2.4.1'
-
+# User authentication
+gem 'devise'
 # A gem to automate using jQuery with Rails
 gem 'jquery-rails'
 # Provides Sprockets implementation for Rails 4.x (and beyond) Asset Pipeline.
@@ -18,7 +19,7 @@ gem 'simple_form'
 gem 'paperclip', '~> 5.2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
-# Use sqlite3 as the database for Active Record
+# Use mysql2 as the database for Active Record
 gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
