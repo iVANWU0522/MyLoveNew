@@ -61,7 +61,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
       user_name:            Rails.application.config.x.smtp_user_name,
       password:             Rails.application.config.x.smtp_password ,
-      domain:               localhost:3000,
+      domain:               'localhost:3000',
       address:              Rails.application.config.x.smtp_address,
       port:                 Rails.application.config.x.smtp_port,
       authentication:       Rails.application.config.x.smtp_authentication,
