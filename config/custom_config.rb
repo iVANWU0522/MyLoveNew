@@ -20,8 +20,8 @@ Rails.application.configure do
   # CLIENT EMAIL SETTINGS
   ##############################################################################
 
-  config.x.email_contact   = 'wu0719900522@gmail.com'
-  config.x.email_itsupport = 'wu0719900522@gmail.com'
-  config.x.email_safety    = 'wu0719900522@gmail.com'
+  config.x.email_contact   = ENV['CONTACT_EMAIL']
+  config.x.email_itsupport = ENV['CONTACT_EMAIL']
+  config.x.email_safety    = ENV['CONTACT_EMAIL']
 
 end
