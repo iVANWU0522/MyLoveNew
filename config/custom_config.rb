@@ -11,7 +11,7 @@ Rails.application.configure do
   config.x.smtp_port                  = 587
   config.x.smtp_address               = 'smtp.gmail.com'
   config.x.smtp_authentication        = 'login'
-  config.x.smtp_user_name             = 'ivan.wu7887@gmail.com'
+  config.x.smtp_user_name             = ENV['MAIL_ADDRESS']
   config.x.smtp_password              = ENV['MAIL_PASSWORD']
   config.x.smtp_enable_starttls_auto  = true
 
