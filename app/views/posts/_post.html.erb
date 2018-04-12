@@ -16,6 +16,9 @@
     <div class="post-bottom">
       <div class="caption">
         <div class="caption-content">
+          <div class="user-name">
+            <%= post.user.user_name %>
+          </div>
           <%= post.caption %>
         </div>
       </div>
@@ -29,12 +32,19 @@
               <%= comment.content %>
             </div>
             <% if comment.user == current_user %>
-              <%= link_to post_comment_path(post, comment), method: :delete, data: {confirm: "Are you sure?"} %>
+              <%= link_to post_comment_path(post, comment), method: :delete, data: {confirm: "Are you sure?"} do %>
+                <i class="fas fa-times delete-comment-icon"></i>
+              <% end %>
             <% end %>
           </div>
         <% end %>
       <% end %>
-      <div class="comment-form">
+    </div>
+    <div class="comment-like-form row">
+      <div class="like-button col-sm-1">
+        <i class="far fa-heart"></i>
+      </div>
+      <div class="comment-form col-sm-11">
         <%= form_for [post, post.comments.new] do |f| %>
           <%= f.text_field :content, placeholder: 'Add a comment...' %>
         <% end %>

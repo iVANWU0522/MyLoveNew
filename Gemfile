@@ -7,6 +7,8 @@ end
 ruby '2.4.1'
 # A Ruby gem to load environment variables from `.env`
 gem 'dotenv-rails', require: 'dotenv/rails-now'
+# font-awesome
+gem 'font-awesome-sass'
 # User authentication
 gem 'devise'
 # A gem to automate using jQuery with Rails
