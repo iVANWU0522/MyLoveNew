@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true, length: { minimum: 2, maximum: 16 }
 
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
