@@ -12,9 +12,9 @@
     <%= f.input :password, required: true, label: false, placeholder: 'Password' %>
     <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Confirm Password' %>
 
-    <%= f.check_box :is_female, {}, false %>
+    <%= f.radio_button :is_female, {}, :checked => true %>
     <%= f.label :is_female, "Male" %>
-    <%= f.check_box :is_female, {}, true %>
+    <%= f.radio_button :is_female, {} %>
     <%= f.label :is_female, "Female" %>
 
     <%= f.button :submit, "Sign Up", class: 'btn-lg btn-info btn-block' %>
