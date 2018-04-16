@@ -8,6 +8,16 @@
   background-size: cover;
 }
 
+.login-bg {
+  padding-top: 4em;
+  height: 100%;
+  background-image: image-url('login_bg.jpg');
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .log-in{
   margin-left: auto;
   margin-right: auto;
