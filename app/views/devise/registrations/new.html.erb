@@ -1,7 +1,7 @@
 <div class="registration-bg">
   <div class="container">
     <div class="row">
-      <div class="col-md-4 col-md-offset-4">
+      <div class="col-md-4 offset-md-4">
         <div class="log-in card">
           <div class="card-header">
             <h2>Create Your Account</h2>
@@ -18,17 +18,13 @@
               <%= f.input :password, required: true, label: false, placeholder: 'Password', input_html: { class: 'form-control' } %>
               <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Confirm Password', input_html: { class: 'form-control' } %>
 
-              <%= f.radio_button :is_female, {}, :checked => true %>
-              <%= f.label :is_female, "Male" %>
-              <%= f.radio_button :is_female, {} %>
-              <%= f.label :is_female, "Female" %>
-
+              <%= f.input :is_female, as: :radio_buttons, label: false, collection: [['Female', '1'], ['Male', '0']] %>
               <%= f.button :submit, "Sign Up", class: 'btn-lg btn-info btn-block' %>
             </div>
           <% end %>
-        </div>
-        <div class="card-footer">
-          <%= render "devise/shared/links" %>
+<!--          <div class="card-footer">-->
+            <%#= render "devise/shared/links" %>
+<!--          </div>-->
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 .registration-bg {
   padding-top: 4em;
   height: 100%;
-  background-image: image-url('regbackg.jpg');
+  background-image: image-url('flower_bg.jpeg');
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -11,16 +11,20 @@
 .log-in{
   margin-left: auto;
   margin-right: auto;
-  text-align:center;
+  text-align: center;
   border: none;
 }
 
 .card {
   border-radius: 8px;
-}
-
-.card-header{
-  h1 {
-    text-align: center;
+  .card-header{
+    h1 {
+      text-align: center;
+    }
+    border-bottom: none;
+  }
+  .card-footer{
+    border-top: none;
   }
 }
+
