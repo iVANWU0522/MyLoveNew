@@ -7,6 +7,8 @@ end
 ruby '2.4.1'
 # A Ruby gem to load environment variables from `.env`
 gem 'dotenv-rails', require: 'dotenv/rails-now'
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
+gem 'kaminari'
 # font-awesome
 gem 'font-awesome-sass'
 # User authentication
