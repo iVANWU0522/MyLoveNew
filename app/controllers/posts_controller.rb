@@ -1,17 +1,18 @@
 class PostsController < ApplicationController
   # before action
   before_action :authenticate_user!
-  before_action :owned_post, only: [:edit, :update, :destroy]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :owned_post, only: [:edit, :update, :destroy]
+
   # GET /posts
   # GET /posts.json
   def index
     @posts = Post.all.order('created_at DESC').page params[:page]
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.js
-    end
+    # respond_to do |format|
+    #   format.html # index.html.erb
+    #   format.js
+    # end
   end
 
   # GET /posts/1
@@ -38,7 +39,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @post = Post.find(params[:id])
+
   end
 
   # POST /posts
@@ -98,15 +99,15 @@ class PostsController < ApplicationController
 
   private
 
-  def owned_post
-    unless current_user == @post.user
-      flash[:alert] = "That post doesn't belong to you!"
-      redirect_to root_path
-    end
-  end
-
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def owned_post
+    unless current_user == @post.user
+      flash[:alert] = "That post doesn't belong to you"
+      redirect_to root_path
+    end
   end
 
   def post_params
