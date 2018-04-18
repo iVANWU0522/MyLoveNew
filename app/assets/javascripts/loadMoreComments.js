@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$( document ).on('turbolinks:load', function() {
     $('.more-comments').click( function() {
         $(this).on('ajax:success', function(event) {
             var postId = $(this).data("post-id");
