@@ -24,4 +24,10 @@ Rails.application.configure do
   config.x.email_itsupport = ENV['CONTACT_EMAIL']
   config.x.email_safety    = ENV['CONTACT_EMAIL']
 
+  ##############################################################################
+  # API SECRET KEY
+  ##############################################################################
+
+  config.x.forecast_io_key = ENV['FORECAST_IO_KEY']
+
 end

@@ -7,6 +7,8 @@ end
 ruby '2.4.1'
 # A Ruby gem to load environment variables from `.env`
 gem 'dotenv-rails', require: 'dotenv/rails-now'
+# Ruby gem for retrieving data from the Forecast Weather API
+gem 'forecast_io'
 # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
 gem 'kaminari'
 # font-awesome
