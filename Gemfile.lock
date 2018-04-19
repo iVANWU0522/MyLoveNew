@@ -93,6 +93,7 @@ GEM
       faraday
       hashie
       multi_json
+    geocoder (1.4.7)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     hashie (3.5.7)
@@ -249,6 +250,7 @@ DEPENDENCIES
   dotenv-rails
   font-awesome-sass
   forecast_io
+  geocoder
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
