@@ -1,0 +1,5 @@
+<%# ip = request.remote_ip %>
+<% ip = '137.111.13.204' %>
+<% user_location = Geocoder.search (ip) %>
+<% forecast = ForecastIO.forecast(user_location[0].latitude, user_location[0].longitude) %>
+<%= forecast.currently.summary %>
