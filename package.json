@@ -2,7 +2,8 @@
   "name": "MyLoveNew",
   "private": true,
   "dependencies": {
-    "animate.css": "^3.6.1",
-    "wow.js": "^1.2.2"
+    "core-js": "^2.5.6",
+    "glslify": "^6.1.1",
+    "gsap": "^1.20.4"
   }
 }
